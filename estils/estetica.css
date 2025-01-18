@@ -1,7 +1,4 @@
-@font-face {
-	font-family: Raleway;
-	src: url(../../../../../recursos/fonts/Raleway/Raleway-Regular.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,100..900&display=swap');
 
 :root {
 	--primary-color: #F8F8F8AA;
