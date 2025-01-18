@@ -1,0 +1,79 @@
+// Position
+
+html, body { margin: 0; padding: 0 }
+
+body, canvas, #app {
+	position: fixed;
+	top: 0; left: 0; right: 0; bottom: 0;
+	overflow: hidden;
+}
+
+
+
+// Padding
+
+#app { padding: 50px }
+
+
+
+// Layers
+
+canvas { z-index: -1 }
+body { z-index: 0 }
+
+
+
+// App
+
+#app {
+	display: grid;
+	grid-template-columns: 200px 1fr 180px;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas: 'slider a button' 'slider b button' 'slider mode button';
+}
+
+#varsControllers {
+	grid-area: slider;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+#actionControllers {
+	grid-area: button;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+#modeSelector {
+	grid-area: mode;
+	display: flex;
+	flex-direction: row;
+	gap: 25px;
+	justify-content: center;
+	& > img {
+		width: 45px;
+		cursor: pointer;
+	}
+}
+
+@media ( max-width: 675px ) {
+	#app { padding: 25px }
+	#app {
+		grid-template-columns: 100%;
+		grid-template-rows: auto auto 1fr auto;
+		grid-template-areas: 'mode' 'slider' 'b' 'button';
+		gap: 25px;
+	}
+	#actionControllers {
+		flex-direction: row;
+		gap: 5px;
+	}
+	#modeSelector {
+		gap: 15px;
+		& > img {
+			width: 25px;
+		}
+	}
+}

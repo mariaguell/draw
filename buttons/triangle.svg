@@ -1,0 +1,12 @@
+<svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<linearGradient id="gradient">
+			<stop offset="0"   stop-color="hsla(  60, 80%, 25%, .8 )" />
+			<stop offset="100" stop-color="hsla( 180, 80%, 25%, .8 )" />
+		</linearGradient>
+	</defs>
+	<polygon id="icon" points="50,10 90,90 10,90" stroke="url(#gradient)" stroke-width="10px" stroke-linejoin="round" fill="transparent">
+		<animate id="phase1" attributeName="opacity" begin="icon.mouseover" dur="1" from="1" to="0"></animate>
+		<animate id="phase2" attributeName="opacity" begin="phase1.end" dur="1" from="0" to="1"></animate>
+	</polygon>
+</svg>

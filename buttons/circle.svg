@@ -1,0 +1,13 @@
+<svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<linearGradient id="gradient">
+			<stop offset="0"   stop-color="hsla( 180, 80%, 25%, .8 )" />
+			<stop offset="100" stop-color="hsla( 315, 80%, 25%, .8 )" />
+		</linearGradient>
+	</defs>
+	<circle cx="50" cy="50" r="45" stroke="url(#gradient)" stroke-width="10px" fill="transparent">
+		<!-- ToDo: fer una animació millor -->
+		<animate id="phase1" attributeName="opacity" begin="icon.mouseover" dur="1" from="1" to="0"></animate>
+		<animate id="phase2" attributeName="opacity" begin="phase1.end" dur="1" from="0" to="1"></animate>
+	</circle>
+</svg>

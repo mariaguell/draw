@@ -9,9 +9,7 @@
 
 		<title>Symmetrical Drawing</title>
 
-		<link rel="stylesheet" href="../estils/layout.css" />
-		<link rel="stylesheet" href="../estils/estetica.css" />
-		<link rel="stylesheet" href="../estils/shapes.css" />
+		<link rel="stylesheet" href="../style.css" />
 		<script src="../funcions.js"></script>
 		<script src="../p5.js"></script>
 		<style>
@@ -34,15 +32,15 @@
 				<input type="range" id="inpAlfa" min="0" max=".5" step="0.01" />
 				<input type="range" id="inpSize" min="5" max="50" step="1" />
 			</div>
-			<div id="buttonsControllers">
+			<div id="actionControllers">
 				<button onclick="clearCanvas()">Clean</button>
 				<button onclick="toogglePaintMode()">Switch mode</button>
 				<button onclick="resetSliders()">Reset slides</button>
 			</div>
-			<div id="artworkSelector">
-				<button onclick="changeArwork(1)" class="circle selected"></button>
-				<button onclick="changeArwork(2)" class="square"></button>
-				<button onclick="changeArwork(3)" class="triangle"></button>
+			<div id="modeSelector">
+				<img src="../buttons/circle.svg"   onclick="changeArwork(1)" alt="Circle mode">
+				<img src="../buttons/square.svg"   onclick="changeArwork(2)" alt="Square mode">
+				<img src="../buttons/triangle.svg" onclick="changeArwork(3)" alt="Triangle mode">
 			</div>
 		</div>
 	</body>

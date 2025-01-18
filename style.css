@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,100..900&display=swap");
+@import 'style/slider.css';
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body, canvas, #app {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+#app {
+  padding: 50px;
+}
+
+canvas {
+  z-index: -1;
+}
+
+body {
+  z-index: 0;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 200px 1fr 180px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "slider a button" "slider b button" "slider mode button";
+}
+
+#varsControllers {
+  grid-area: slider;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#actionControllers {
+  grid-area: button;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+#modeSelector {
+  grid-area: mode;
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  justify-content: center;
+}
+#modeSelector > img {
+  width: 45px;
+  cursor: pointer;
+}
+
+@media (max-width: 675px) {
+  #app {
+    padding: 25px;
+  }
+  #app {
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: "mode" "slider" "b" "button";
+    gap: 25px;
+  }
+  #actionControllers {
+    flex-direction: row;
+    gap: 5px;
+  }
+  #modeSelector {
+    gap: 15px;
+  }
+  #modeSelector > img {
+    width: 25px;
+  }
+}
+body {
+  font-family: "Raleway", "Segoe UI Light", "Segoe UI", Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #1F1F1F;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: rgba(248, 248, 248, 0.6666666667);
+  background-color: #1F1F1F;
+}
+
+button {
+  position: relative;
+  border: none;
+  background-color: hsla(45, 80%, 25%, 0.8);
+  z-index: 1;
+}
+button::before {
+  content: " ";
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  left: 4px;
+  z-index: -1;
+  background-color: #1F1F1F;
+}
+button:hover::before, button.selected::before {
+  opacity: 0.2;
+}
+
+button:nth-child(1) {
+  background: linear-gradient(to right, hsla(180, 80%, 25%, 0.8), hsla(315, 80%, 25%, 0.8));
+}
+button:nth-child(2) {
+  background: linear-gradient(to right, hsla(315, 80%, 25%, 0.8), hsla(45, 80%, 25%, 0.8));
+}
+button:nth-child(3) {
+  background: linear-gradient(to right, hsla(45, 80%, 25%, 0.8), hsla(180, 80%, 25%, 0.8));
+}
